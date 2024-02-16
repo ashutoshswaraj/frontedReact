@@ -18,7 +18,7 @@ const Mytour = () => {
   const My_tours = async () => {
     setLoader(true);
     try {
-      const response = await axiosPrivate.get(`/tours/my-tours`);
+      const response = await axiosPrivate.get(`tours/my-tours`);
       console.log(response, "responsee");
       setTourDetail(response.data.tours);
     } catch (err) {}
