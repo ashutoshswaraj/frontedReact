@@ -24,14 +24,7 @@ const SideNav = ({ userData }) => {
         <ul className="side-nav">
           <NavItem link="#" text="Settings" icon="#settings" active={true} />
 
-          <NavItem
-            link="/my_tour"
-            text="My Tour"
-            icon="star"
-            onClick={() => {
-              navigate("/my_tour");
-            }}
-          />
+          {/* <NavItem link="/my_tour" text="My Tour" icon="star" /> */}
           {/* <NavItem link="#" text="Billing" icon="credit-card" /> */}
         </ul>
 
@@ -47,6 +40,13 @@ const SideNav = ({ userData }) => {
           </div>
         )}
       </nav>
+      <p
+        onClick={() => {
+          navigate("/my_tour");
+        }}
+      >
+        My Tour
+      </p>
     </div>
   );
 };
