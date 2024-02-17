@@ -40,11 +40,13 @@ const LoginForm = () => {
         withCredentials: true,
       });
       const { accessToken, refreshToken } = response.data;
-      console.log(response, "uuuuuuuuuuuuu");
-      setAuth({ email, password, accessToken, refreshToken });
+      const user_id = response.data.data.user._id;
+
+      setAuth({ email, password, accessToken, refreshToken, user_id });
 
       localStorage.setItem("persist", true);
       localStorage.setItem("token", refreshToken);
+      localStorage.setItem("user_id", user_id);
       navigate(from, { replace: true });
     } catch (err) {
       console.log(err);

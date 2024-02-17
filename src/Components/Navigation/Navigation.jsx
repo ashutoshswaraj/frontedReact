@@ -9,6 +9,7 @@ import Layout from "../Auth/Layout";
 import SingleUserme from "../Users/Singleuserme";
 import Signup from "../Auth/Signup";
 import Mytour from "../Tours/Mytour";
+import Myreview from "../Tours/Myreview";
 const Navigation = () => {
   return (
     <>
@@ -22,6 +23,7 @@ const Navigation = () => {
           <Route element={<SingleTours />} path="/tour/:slug" />
           <Route element={<SingleUserme />} path="/me" />
           <Route element={<Mytour />} path="/my_tour" />
+          <Route element={<Myreview />} path="/my_review" />
         </Route>
       </Routes>
     </>

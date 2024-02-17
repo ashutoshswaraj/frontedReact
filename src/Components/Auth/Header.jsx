@@ -31,7 +31,7 @@ const Header = ({ user }) => {
       const response = await axiosPrivate.get(`users/me`);
       console.log(response.data.data.photo, "response.data.data.photo");
 
-      setPhoto(response.data.data.photo);
+      setPhoto(response.data.data[0].photo);
     } catch (err) {}
   };
   return (

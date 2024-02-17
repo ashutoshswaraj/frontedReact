@@ -1,0 +1,44 @@
+/* NoToursMessage.css */
+
+.no-tours-message-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.no-tours-message-container {
+  text-align: center;
+}
+
+.sad-face {
+  width: 80px;
+  height: 80px;
+}
+
+.no-tours-message {
+  color: #e74c3c; /* Light red color */
+  background-color: #ff6464a5;
+}
+
+.no-tours-message-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+p {
+  color: #555;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

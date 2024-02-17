@@ -5,7 +5,7 @@ const NavItem = ({ link, text, icon, active }) => (
   <li className={`side-nav${active ? " side-nav--active" : ""}`}>
     <a href={link}>
       <svg className="card__icon">
-        <use src={`${ImageFile}#icon-map-pin`}></use>
+        <use src={`${ImageFile}#icon-settings`}></use>
       </svg>
       <span>{text}</span>
     </a>
@@ -18,35 +18,43 @@ const SideNav = ({ userData }) => {
     <div
       style={{
         display: "flex",
+        width: "18%",
       }}
     >
       <nav className="user-view__menu">
-        <ul className="side-nav">
-          <NavItem link="#" text="Settings" icon="#settings" active={true} />
-
-          {/* <NavItem link="/my_tour" text="My Tour" icon="star" /> */}
-          {/* <NavItem link="#" text="Billing" icon="credit-card" /> */}
+        <ul className="side-nav ul_Text">
+          {/* <NavItem link="#" text="Settings" icon="#settings" active={true} /> */}
+          <li className="side-nav--active">Settings</li>
+          <li
+            onClick={() => {
+              navigate("/my_tour");
+            }}
+          >
+            {" "}
+            My Tour
+          </li>
+          <li
+            className=""
+            onClick={() => {
+              navigate("/my_review");
+            }}
+          >
+            My Reviews
+          </li>
         </ul>
 
         {userData.role === "admin" && (
           <div className="admin-nav">
             <h5 className="admin-nav__heading">Admin</h5>
-            <ul className="side-nav">
-              <NavItem link="#" text="Manage tours" icon="map" />
-              <NavItem link="#" text="Manage users" icon="users" />
-              <NavItem link="#" text="Manage reviews" icon="star" />
-              <NavItem link="#" text="Manage bookings" icon="briefcase" />
+            <ul className="side-nav ul_Text">
+              <li>Manage tours</li>
+              <li>Manage users</li>
+              <li>Manage reviews</li>
+              <li>Manage bookings</li>
             </ul>
           </div>
         )}
       </nav>
-      <p
-        onClick={() => {
-          navigate("/my_tour");
-        }}
-      >
-        My Tour
-      </p>
     </div>
   );
 };

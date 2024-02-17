@@ -68,7 +68,7 @@ const SingleTours = () => {
   const Single_Tours = async () => {
     setLoader(true);
     try {
-      const response = await axiosPrivate.get(`/tours/${slug}`);
+      const response = await axiosPrivate.get(`/tours/slug/${slug}`);
       setTourData(response.data.data);
       setLat([]);
       setLng([]);
